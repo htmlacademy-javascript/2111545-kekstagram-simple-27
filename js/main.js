@@ -1,10 +1,10 @@
 // Количество объектов с описанием фотографий
 const PHOTO_DESCRIPTION_COUNT = 25;
 // Массив, состоящий из объектов, содержащих описание фотографий
-const descriptionArray = [];
+const descriptions = [];
 
 // Генерация случайного целого числа в диапазоне (min, max)
-function getRandomIntNumber (min = 0, max = 1000) {
+const getRandomIntNumber = (min = 0, max = 1000) => {
   if (min < 0 || max <= 0 || min === max || min > max) {
     return NaN;
   }
@@ -15,14 +15,12 @@ function getRandomIntNumber (min = 0, max = 1000) {
   max = Math.floor(max);
 
   return Math.floor(Math.random() * (max - min + 1) + min);
-}
+};
 
 // Проверка максимальной длины строки
-function checkStringMaxLength (str = 'Мяу', maxLength = 100) {
-  return str.length <= maxLength;
-}
+const checkStringMaxLength = (str = 'Мяу', maxLength = 100) => str.length <= maxLength;
 
-const DESCRIPTION = [
+const PHOTOS_DESCRIPTIONS = [
   'Питер такой красивый!',
   'На пикнике',
   'Поход в театр',
@@ -41,7 +39,7 @@ const createDescription = (index) => ({
   url: `photos/${index}.jpg`,
 
   // Описание фотографии
-  description: DESCRIPTION[getRandomIntNumber(0, DESCRIPTION.length - 1)],
+  description: PHOTOS_DESCRIPTIONS[getRandomIntNumber(0, PHOTOS_DESCRIPTIONS.length - 1)],
 
   // Количество лайков (случайное число от 15 до 200)
   likes: getRandomIntNumber(15, 200),
@@ -52,7 +50,7 @@ const createDescription = (index) => ({
 
 const createElement = () => {
   for (let i = 1; i <= PHOTO_DESCRIPTION_COUNT; i++) {
-    descriptionArray.push(createDescription(i));
+    descriptions.push(createDescription(i));
   }
 };
 
@@ -61,5 +59,5 @@ checkStringMaxLength();
 
 // Вывод элементов массива (для проверки работоспособности)
 /*for(let i = 0; i < PHOTO_DESCRIPTION_COUNT; i++) {
-  console.log(descriptionArray[i]);
+  console.log(descriptions[i]);
 }*/
