@@ -45,4 +45,5 @@ checkStringMaxLength();
 /*for(let i = 0; i < PHOTO_DESCRIPTION_COUNT; i++) {
   console.log(descriptions[i]);
 }*/
-export {createElement};
+
+export {createDescription};
