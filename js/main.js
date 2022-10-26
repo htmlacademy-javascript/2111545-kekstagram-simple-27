@@ -1,3 +1,2 @@
-import './data.js';
-import {createDescription} from './data.js';
-console.log(createDescription());
+import {createElement} from './data.js';
+console.log(createElement());

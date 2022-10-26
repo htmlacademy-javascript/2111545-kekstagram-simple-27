@@ -1,8 +1,9 @@
 import {getRandomIntNumber, checkStringMaxLength} from './util.js';
+
+// Временный вызов функции, чтобы линтер не ругался, потом нужно УДАЛИТЬ
+checkStringMaxLength();
 // Количество объектов с описанием фотографий
 const PHOTO_DESCRIPTION_COUNT = 25;
-// Массив, состоящий из объектов, содержащих описание фотографий
-const descriptions = [];
 
 const PHOTOS_DESCRIPTIONS = [
   'Питер такой красивый!',
@@ -33,17 +34,12 @@ const createDescription = (index) => ({
 });
 
 const createElement = () => {
+  // Массив, состоящий из объектов, содержащих описание фотографий
+  const descriptions = [];
   for (let i = 1; i <= PHOTO_DESCRIPTION_COUNT; i++) {
     descriptions.push(createDescription(i));
   }
+  return descriptions;
 };
 
-createElement();
-checkStringMaxLength();
-
-// Вывод элементов массива (для проверки работоспособности)
-/*for(let i = 0; i < PHOTO_DESCRIPTION_COUNT; i++) {
-  console.log(descriptions[i]);
-}*/
-
-export {createDescription};
+export {createElement};
