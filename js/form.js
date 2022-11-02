@@ -1,21 +1,11 @@
 import {isEscape} from './util.js';
 const body = document.body;
-// Блок загрузки фото
-const uploadForm = document.querySelector('.img-upload__form');
 // Кнопка для загрузки фото
 const filePhoto = document.querySelector('#upload-file');
 // Форма для добавления фото
 const editorForm = document.querySelector('.img-upload__overlay');
 // Кнопка для закрытия формы
 const buttonCloseEditor = document.querySelector('.img-upload__cancel');
-
-const pristine = new Pristine(uploadForm, {
-  classTo: 'img-upload__text',
-  errorTextParent: 'img-upload__text',
-
-  // Для добавления класса невалидной форме
-  //errorTextClass: 'setup-wizard-form__error-text',
-});
 
 // Обработчик закрытия модального окна при нажатии Esc
 const onEditorEscKeydown = () => document.addEventListener('keydown', (evt) => {
