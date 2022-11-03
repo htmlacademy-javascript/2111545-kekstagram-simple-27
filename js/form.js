@@ -8,17 +8,12 @@ const editorForm = document.querySelector('.img-upload__overlay');
 const buttonCloseEditor = document.querySelector('.img-upload__cancel');
 
 // Обработчик закрытия модального окна при нажатии Esc
-const onEditorEscKeydown = () => document.addEventListener('keydown', (evt) => {
+const onEditorEscKeydown = (evt) => {
   if(isEscape(evt)) {
     evt.preventDefault();
     closeEditor();
   }
-});
-
-// Обработчик закрытия модального окна по нажатию на крестик
-const onEditorClick = () => buttonCloseEditor.addEventListener('click', () => {
-  closeEditor();
-});
+};
 
 function closeEditor() {
   editorForm.classList.add('hidden');
@@ -26,7 +21,6 @@ function closeEditor() {
 
   // Удаление обработчиков
   document.removeEventListener('keydown', onEditorEscKeydown);
-  document.removeEventListener('click', onEditorClick);
 
   filePhoto.value = '';
 }
@@ -36,7 +30,9 @@ const openEditor = () => filePhoto.addEventListener('change', () => {
   editorForm.classList.remove('hidden');
   body.classList.add('modal-open');
   document.addEventListener('keydown', onEditorEscKeydown);
-  document.addEventListener('click', onEditorClick);
 });
+
+// Обработчик закрытия модального окна по нажатию на крестик
+buttonCloseEditor.addEventListener('click', closeEditor);
 
 export {openEditor};
