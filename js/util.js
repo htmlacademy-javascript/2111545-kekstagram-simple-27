@@ -15,4 +15,6 @@ const getRandomIntNumber = (min = 0, max = 1000) => {
 // Проверка максимальной длины строки
 const checkStringMaxLength = (str = 'Мяу', maxLength = 100) => str.length <= maxLength;
 
-export {getRandomIntNumber, checkStringMaxLength};
+const isEscape = (evt) => evt.key === 'Escape';
+
+export {getRandomIntNumber, checkStringMaxLength, isEscape};
