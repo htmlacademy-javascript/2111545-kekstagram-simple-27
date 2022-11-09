@@ -1,7 +1,7 @@
-import {createElement} from './data.js';
-import {renderPhotos} from './render-photos.js';
-import {openEditor} from './form.js';
+import { createElement } from './data.js';
+import { renderPhotos } from './render-photos.js';
+import { openEditor } from './form.js';
+import './photo-effect.js';
 renderPhotos();
-//console.log(createElement());
 createElement();
 openEditor();

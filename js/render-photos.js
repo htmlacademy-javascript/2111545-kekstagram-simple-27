@@ -1,4 +1,4 @@
-import {createElement} from './data.js';
+import { createElement } from './data.js';
 
 const renderPhotos = () => {
   // Шаблон HTML для отрисовки изображения
@@ -25,4 +25,4 @@ const renderPhotos = () => {
   photosListSection.appendChild(photosListFragment);
 };
 
-export {renderPhotos};
+export { renderPhotos };

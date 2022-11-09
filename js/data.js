@@ -1,4 +1,4 @@
-import {getRandomIntNumber, checkStringMaxLength} from './util.js';
+import { getRandomIntNumber, checkStringMaxLength } from './util.js';
 
 // Временный вызов функции, чтобы линтер не ругался, потом нужно УДАЛИТЬ
 checkStringMaxLength();
@@ -42,4 +42,4 @@ const createElement = () => {
   return descriptions;
 };
 
-export {createElement};
+export { createElement };
