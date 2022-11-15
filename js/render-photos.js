@@ -1,6 +1,7 @@
-import { createElement } from './data.js';
+import { getData } from './api.js';
+import { showErrorMessage } from './util.js';
 
-const renderPhotos = () => {
+const renderPhotos = (description) => {
   // Шаблон HTML для отрисовки изображения
   const photoTemplate = document.querySelector('#picture').content.querySelector('.picture');
 
@@ -9,15 +10,12 @@ const renderPhotos = () => {
   // Создаём фрагмент для вставки элементов
   const photosListFragment = document.createDocumentFragment();
 
-  // Генерация описаний фотографий
-  const photos = createElement();
-
-  photos.forEach((photoItem) => {
+  description.forEach(({url, comments, likes}) => {
     // Создаём копию шаблона
     const photo = photoTemplate.cloneNode(true);
-    photo.querySelector('.picture__img').src = photoItem.url;
-    photo.querySelector('.picture__likes').textContent = photoItem.likes;
-    photo.querySelector('.picture__comments').textContent = photoItem.comment;
+    photo.querySelector('.picture__img').src = url;
+    photo.querySelector('.picture__likes').textContent = likes;
+    photo.querySelector('.picture__comments').textContent = comments;
 
     photosListFragment.appendChild(photo);
   });
@@ -25,4 +23,5 @@ const renderPhotos = () => {
   photosListSection.appendChild(photosListFragment);
 };
 
+getData(renderPhotos, showErrorMessage);
 export { renderPhotos };

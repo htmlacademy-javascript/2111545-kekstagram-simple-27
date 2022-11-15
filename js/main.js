@@ -1,7 +1,7 @@
-import { createElement } from './data.js';
 import { renderPhotos } from './render-photos.js';
-import { openEditor } from './form.js';
+import { openEditor, setUserFormSubmit } from './form.js';
 import './photo-effect.js';
-renderPhotos();
-createElement();
+import './api.js';
+
 openEditor();
+setUserFormSubmit();
