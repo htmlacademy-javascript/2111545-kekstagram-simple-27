@@ -23,5 +23,8 @@ const renderPhotos = (description) => {
   photosListSection.appendChild(photosListFragment);
 };
 
-getData(renderPhotos, showErrorMessage);
-export { renderPhotos };
+const drawPhoto = () => {
+  getData(renderPhotos, showErrorMessage);
+};
+
+export { drawPhoto };
