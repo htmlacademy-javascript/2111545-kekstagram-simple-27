@@ -57,7 +57,7 @@ const unBlockSubmitButton = () => {
 };
 
 // Обработчик отправки данных на сервер
-const OnSendButtonSubmit = (evt) => {
+const onSendButtonSubmit = (evt) => {
   evt.preventDefault();
   if (uploadForm.checkValidity()) {
     blockSubmitButton();
@@ -80,7 +80,7 @@ const OnSendButtonSubmit = (evt) => {
 
 // Отправка данных на сервер
 const setUserFormSubmit = () => {
-  uploadForm.addEventListener('submit', OnSendButtonSubmit);
+  uploadForm.addEventListener('submit', onSendButtonSubmit);
 };
 
 export { openEditor, setUserFormSubmit };
