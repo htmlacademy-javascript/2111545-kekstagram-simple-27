@@ -1,3 +1,10 @@
+// Шаг масштабирования
+const STEP = 25;
+
+const MAX_SCALE = 100;
+const MIN_SCALE = 25;
+const DEFAULT_SCALE = 100;
+
 // Кнопки масштабирования
 const smallerButton = document.querySelector('.scale__control--smaller');
 const biggerButton = document.querySelector('.scale__control--bigger');
@@ -7,13 +14,6 @@ const scaleInput = document.querySelector('.scale__control--value');
 
 // Превью изображения в модальном окне
 const imagePreview = document.querySelector('.img-upload__preview img');
-
-// Шаг масштабирования
-const STEP = 25;
-
-const MAX_SCALE = 100;
-const MIN_SCALE = 25;
-const DEFAULT_SCALE = 100;
 
 // Масштабирование фото и вывод масштаба
 const scaleImage = (value = DEFAULT_SCALE) => {
