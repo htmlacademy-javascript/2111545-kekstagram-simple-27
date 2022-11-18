@@ -1,13 +1,3 @@
-// Модальное окно
-const form = document.querySelector('.img-upload__form');
-// Превью изображения
-const preview = document.querySelector('.img-upload__preview img');
-
-// Слайдер
-const sliderElement = document.querySelector('.effect-level__slider');
-// Значение слайдера
-const effectLevel = document.querySelector('.effect-level__value');
-
 // Эффекты
 const EFFECTS = [
   {
@@ -59,6 +49,17 @@ const EFFECTS = [
 ];
 
 const DEFAULT_EFFECT = EFFECTS[0];
+
+// Модальное окно
+const form = document.querySelector('.img-upload__form');
+// Превью изображения
+const preview = document.querySelector('.img-upload__preview img');
+
+// Слайдер
+const sliderElement = document.querySelector('.effect-level__slider');
+// Значение слайдера
+const effectLevel = document.querySelector('.effect-level__value');
+
 let chosenEffect = DEFAULT_EFFECT;
 
 const isDefault = () => chosenEffect === DEFAULT_EFFECT;
