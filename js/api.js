@@ -1,7 +1,7 @@
 const URL_GET = 'https://27.javascript.pages.academy/kekstagram-simple/data';
 const URL_SET = 'https://27.javascript.pages.academy/kekstagram-simple';
+const ERROR_MESSAGE = 'Ошибка загрузки данных! Попробуйте обновить страницу';
 
-// Получение данных
 const getData = (onSuccess, onError) => {
   fetch(URL_GET)
     .then((response) => response.json())
@@ -11,11 +11,10 @@ const getData = (onSuccess, onError) => {
     })
 
     .catch(() => {
-      onError('Ошибка загрузки данных! Попробуйте обновить страницу');
+      onError(ERROR_MESSAGE);
     });
 };
 
-// Отправка данных
 const sendData = (onSuccess, onError, body) => {
   fetch(
     URL_SET,
