@@ -8,7 +8,6 @@ const smallerButton = document.querySelector('.scale__control--smaller');
 const biggerButton = document.querySelector('.scale__control--bigger');
 
 const scaleInput = document.querySelector('.scale__control--value');
-
 const imagePreview = document.querySelector('.img-upload__preview img');
 
 const scaleImage = (value = DEFAULT_SCALE) => {
